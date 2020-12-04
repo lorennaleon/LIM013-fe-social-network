@@ -1,3 +1,5 @@
+import { signin } from '../controler/auth.js';
+
 export default () => {
   const formLogin = `
  <form id ="form-signin">
@@ -15,16 +17,12 @@ export default () => {
  `;
   const divElem = document.createElement('div');
   divElem.innerHTML = formLogin;
+  const loginForm = divElem.querySelector('#form-signin');
+  loginForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    const email = divElem.querySelector('#login-email').value;
+    const password = divElem.querySelector('#login-password').value;
+    signin(email, password);
+  });
   return divElem;
 };
-
-// evento login
-// export const loginForm = document.getElementById('btn-login');
-// loginForm.addEventListener('click', (e) => {
-//   e.preventDefault();
-//   const email = document.getElementById('login-email').value;
-//   const password = document.getElementById('login-password').value;
-//   signin(email, password);
-//   // LIMPIA PANTALLA
-//   document.getElementById('pantalla-login').innerHTML = '';
-// });

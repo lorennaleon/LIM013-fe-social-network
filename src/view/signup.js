@@ -1,3 +1,5 @@
+import { regUser } from '../controler/auth.js';
+
 export default () => {
   const formSignup = `
     <form id ="form-signup">
@@ -17,7 +19,15 @@ export default () => {
     `;
   const divElem = document.createElement('div');
   divElem.innerHTML = formSignup;
+  const signupForm = divElem.querySelector('#form-signup');
+  signupForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = divElem.querySelector('#inputCorreo').value;
+    const password = divElem.querySelector('#inputContra').value;
+    regUser(email, password);
+    //   // LIMPIA PANTALLA
+    document.getElementById('container').innerHTML = '';
+  });
   return divElem;
 };
 // eventos
-
