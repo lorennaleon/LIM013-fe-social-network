@@ -1,36 +1,44 @@
-const navegator = `
-<h1 id="title"> GIRL GENERATION </h1>
-<img src="./img/principal.png" alt=""width="300px" />
-<nav id="nav">
- <ul><li ><a id="singup" href ="#/">Singup</a></li></ul>
- <ul><li ><a id="login" href ="#/">Login</a></li></ul>
-</nav>
-`;
-const nav = document.getElementById('nav');
-nav.innerHTML = navegator;
-// const container = document.getElementById('container');
-// container.innerHTML = formTemplate;
-// template y nodo
-const container = document.getElementById('container');
-const formElement = document.createElement('form');
-const formulario = `
- <form id="form">
- <h2 id="bienvenida" >BIENVENIDA</h2>
- <input id="inputCorreo" type="text" placeholder= "CORREO ELECTRÓNICO" />
- <input id="inputContra" type="text" placeholder= "CONTRASEÑA" />
- <button id="iniciar-sesion" type"button" >INICIAR SESIÓN</button>
- <button type="text" class="gmail" id="googlelogin">gmail</button>
- <p>¿Olvidaste tu contraseña?</p>
- <ul><li ><a id="registrarte" href ="#/">Registrarte</a></li></ul>
- </form>
- `;
-formElement.innerHTML = formulario;
+// // import {
+// //   regUser,
+// //   login,
+// //   signOut,
+// // } from '../controler/auth.js';
+// // login del navegador
+// document.getElementById('signup').addEventListener('click', () => {
+//   document.getElementById('pantalla-login').style.display = 'none';
+//   document.getElementById('pantalla-signup').style.display = 'block';
+// });
 
-container.appendChild(formElement);
-// valor de input
-document.getElementById('iniciar-sesion').addEventListener('click', () => {
-  const correo = document.getElementById('inputCorreo').value;
-  const contra = document.getElementById('inputContra').value;
-  console.log(correo);
-  console.log(contra);
-});
+// // valor de input ,registro ,firebase
+// const signupForm = document.getElementById('btn-signup');
+// signupForm.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   const email = document.getElementById('inputCorreo').value;
+//   const password = document.getElementById('inputContra').value;
+//   regUser(email, password);
+//   // LIMPIA PANTALLA
+//   document.getElementById('pantalla-signup').innerHTML = '';
+// });
+// // login del navegador
+// document.getElementById('login').addEventListener('click', () => {
+//   document.getElementById('pantalla-signup').style.display = 'none';
+//   document.getElementById('pantalla-login').style.display = 'block';
+// });
+
+// // evento login
+// const loginForm = document.getElementById('btn-login');
+// loginForm.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   const email = document.getElementById('login-email').value;
+//   const password = document.getElementById('login-password').value;
+//   login(email, password);
+//   // LIMPIA PANTALLA
+//   document.getElementById('pantalla-login').innerHTML = '';
+// });
+
+// // logout
+// const logout = document.getElementById('logout');
+// logout.addEventListener('click', (e) => {
+//   e.preventDefault();
+//   signOut();
+// });
