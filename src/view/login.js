@@ -1,4 +1,4 @@
-import { signin } from '../controler/auth.js';
+import { signIn, google, facebook } from '../controler/auth.js';
 
 export default () => {
   const formLogin = `
@@ -11,18 +11,32 @@ export default () => {
    <div class="form-group">
      <input id="login-password" type="password" placeholder= "CONTRASEÑA" />
    </div>
-   <button id="btn-login" type="text" >Login</button> 
+   <button id="btn-login" type="submit" >Login</button> 
+   <button id="btn-google" type="button" >gmail</button>
+   <button id="btn-facebook" type="button" >facebook</button>
    <li ><a id="olvidaste" href ="#/">¿Olvidaste tu contraseña? </a></li>
   </form>
  `;
   const divElem = document.createElement('div');
   divElem.innerHTML = formLogin;
   const loginForm = divElem.querySelector('#form-signin');
-  loginForm.addEventListener('click', (e) => {
+  loginForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const email = divElem.querySelector('#login-email').value;
     const password = divElem.querySelector('#login-password').value;
-    signin(email, password);
+    signIn(email, password);
+  });
+  // google
+  const googleButton = divElem.querySelector('#btn-google');
+  googleButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    google();
+  });
+  // facebook
+  const facebookButton = divElem.querySelector('#btn-facebook');
+  facebookButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    facebook();
   });
   return divElem;
 };

@@ -15,6 +15,7 @@ export default () => {
         <input id="inputContra" type="password" placeholder= "CONTRASEÑA" />
       </div>
       <button id="btn-signup" type="text" >Signup</button> 
+     
      </form>
     `;
   const divElem = document.createElement('div');

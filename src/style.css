@@ -8,12 +8,13 @@ body{
   display: flexbox;
 }
 
-h1 {
-    color:rgb(20, 19, 20);
+#bienvenido {
+    color:rgb(194, 35, 194);
     width: 60px;
     text-decoration: none;
-    font-size: 20px;
-    float: center;
+    font-size: 15px;
+    margin-left: 80px;
+ 
 }
 
 
@@ -62,18 +63,17 @@ h1 {
 
     
 }
-#pantalla-sigup input:hove,
-#pantalla-login input:hoverr{
+#pantalla-sigup input:hover,
+#pantalla-login input:hover{
     border:2px solid #93BDED;
 }
 #pantala-signup ul li a,
 #pantala-login ul li a{
     text-decoration: none;
     text-align: center;
-   
 }
-#pantalla-signup ul, ol,
-#pantalla-login ul, ol{
+#pantalla-signup ul
+#pantalla-login ul{
     list-style:none;
     text-align: center;
   }

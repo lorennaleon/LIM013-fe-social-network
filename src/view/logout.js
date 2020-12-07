@@ -1,4 +1,4 @@
-import { signOut } from '../controler/auth.js';
+// import { signOut } from '../controler/auth.js';
 
 export default () => {
   const close = `
@@ -6,11 +6,5 @@ export default () => {
       `;
   const divElem = document.createElement('div');
   divElem.innerHTML = close;
-  const logout = divElem.querySelector('#logout');
-  logout.addEventListener('click', (e) => {
-    e.preventDefault();
-    signOut();
-  });
-
   return divElem;
 };
