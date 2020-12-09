@@ -12,6 +12,7 @@ export const viewChange = (hash) => {
     { return sectionMain.appendChild(components.home()); }
     case '#/signup':
     case '#/login':
+    case '#/perfil':
     case '#/logout':
     { return sectionMain.appendChild(components[id]()); }
     default:

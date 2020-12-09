@@ -1,4 +1,6 @@
-import { signIn, google, facebook } from '../controler/auth.js';
+import {
+  signIn, google, facebook,
+} from '../controler/auth.js';
 
 export default () => {
   const formLogin = `
@@ -12,9 +14,10 @@ export default () => {
      <input id="login-password" type="password" placeholder= "CONTRASEÑA" />
    </div>
    <button id="btn-login" type="submit" >Login</button> 
-   <button id="btn-google" type="button" >gmail</button>
-   <button id="btn-facebook" type="button" >facebook</button>
-   <li ><a id="olvidaste" href ="#/">¿Olvidaste tu contraseña? </a></li>
+   <button id="btn-google" type="button" >G</button>
+   <button id="btn-facebook" type="button" >F</button>
+   <p>¿No tienes una cuenta? <span><a href="#/signup">Registrate</a></span></p>
+  </main>
   </form>
  `;
   const divElem = document.createElement('div');
@@ -24,7 +27,14 @@ export default () => {
     e.preventDefault();
     const email = divElem.querySelector('#login-email').value;
     const password = divElem.querySelector('#login-password').value;
-    signIn(email, password);
+    signIn(email, password)
+      .then(() => {
+        window.location.hash = '#/perfil';
+        console.log('sign in');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
   // google
   const googleButton = divElem.querySelector('#btn-google');

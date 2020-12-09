@@ -25,10 +25,14 @@ export default () => {
     e.preventDefault();
     const email = divElem.querySelector('#inputCorreo').value;
     const password = divElem.querySelector('#inputContra').value;
-    regUser(email, password);
-    //   // LIMPIA PANTALLA
-    document.getElementById('container').innerHTML = '';
+    regUser(email, password)
+      .then(() => {
+        window.location.hash = '#/';
+        console.log('sign in');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   });
   return divElem;
 };
-// eventos
