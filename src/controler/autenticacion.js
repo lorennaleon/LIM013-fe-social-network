@@ -1,15 +1,8 @@
-export const currentUserUid = () => firebase.auth().currentUser;
-
-export const authentification = () => {
-  firebase.auth().onAuthStateChanged((user) => {
+export const autenticacion = () => firebase.auth()
+  .onAuthStateChanged((user) => {
     if (user) {
-      // User is signed in
-      const myUser = currentUserUid();
-      window.localStorage.setItem('email', myUser.email);
-      window.location.hash = '#/perfil';
+      console.log('auth:signin', user);
     } else {
-      // no user is signed in
-      window.location.hash = '#/login';
+      console.log('signout');
     }
   });
-};

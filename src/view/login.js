@@ -1,11 +1,11 @@
 import {
-  signIn, google, facebook,
+  signIn, logInGoogle, logInFacebook,
 } from '../controler/auth.js';
 
 export default () => {
   const formLogin = `
- <form id ="form-signin">
   <img src="./img/principal.png" width="330px"/>
+ <form id ="form-signin">
    <h2 id="bienvenida" >BIENVENIDA</h2>
    <div class="form-group">
      <input id="login-email" type="text" placeholder= "CORREO ELECTRÓNICO" />
@@ -40,13 +40,21 @@ export default () => {
   const googleButton = divElem.querySelector('#btn-google');
   googleButton.addEventListener('click', (e) => {
     e.preventDefault();
-    google();
+    logInGoogle()
+      .then(() => {
+        window.location.hash = '#/perfil';
+        console.log('google signin');
+      });
   });
   // facebook
   const facebookButton = divElem.querySelector('#btn-facebook');
   facebookButton.addEventListener('click', (e) => {
     e.preventDefault();
-    facebook();
+    logInFacebook()
+      .then(() => {
+        window.location.hash = '#/perfil';
+        console.log('facebook signin');
+      });
   });
   return divElem;
 };
